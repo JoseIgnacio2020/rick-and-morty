@@ -1,0 +1,27 @@
+<div *ngIf="character" class="character-detail">
+  <h3>{{ character.name }}</h3>
+  <img [src]="character.image" alt="{{ character.name }}" class="character-image">
+
+  <div class="detail-section">
+    <h4>Origen</h4>
+    <p>{{ origin?.name || 'Desconocido' }}</p>
+    <p *ngIf="originResident">
+      Residente: {{ originResident.name }} ({{ originResident.status }} - {{ originResident.species }})
+    </p>
+    <p *ngIf="!originResident">No tiene residentes</p>
+  </div>
+
+  <div class="detail-section">
+    <h4>Ubicación</h4>
+    <p>{{ location?.name || 'Desconocido' }}</p>
+    <p *ngIf="locationResident">
+      Residente: {{ locationResident.name }} ({{ locationResident.status }} - {{ locationResident.species }})
+    </p>
+    <p *ngIf="!locationResident">No tiene residentes</p>
+  </div>
+
+  <div class="detail-section">
+    <h4>Primer Episodio</h4>
+    <p>{{ episode }}</p>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="favorites-container">
+    <h2>Personajes Favoritos</h2>
+    <div *ngIf="favorites.length > 0; else noFavorites">
+      <div *ngFor="let favorite of favorites" class="favorite-item" (click)="onFavoriteClick(favorite)">
+        {{ favorite.name }}
+      </div>
+    </div>
+    <ng-template #noFavorites>
+      <p>No hay personajes favoritos.</p>
+    </ng-template>
+  </div>

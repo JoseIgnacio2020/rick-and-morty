@@ -4,7 +4,12 @@ import { Observable } from 'rxjs';
 import { Character } from '../models/character';
 
 interface APIResponse {
-  info: { pages: number; next: string | null; prev: string | null };
+  info: {
+    count: number;
+    pages: number;
+    next: string | null;
+    prev: string | null;
+  };
   results: Character[];
 }
 

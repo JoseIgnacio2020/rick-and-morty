@@ -1,0 +1,28 @@
+.character-detail {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .character-image {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .detail-section {
+    margin-bottom: 16px;
+  }
+  
+  .detail-section h4 {
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .detail-section p {
+    margin: 4px 0;
+    color: #666;
+  }

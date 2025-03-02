@@ -1,1 +1,7 @@
-<app-characters-table></app-characters-table>
+<div class="container">
+  <app-favorites></app-favorites>
+  <div class="content">
+    <app-characters-table (characterSelected)="onCharacterSelected($event)"></app-characters-table>
+    <app-character-detail [character]="selectedCharacter"></app-character-detail>
+  </div>
+</div>

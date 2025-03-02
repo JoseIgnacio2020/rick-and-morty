@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+app-characters-table {
+  flex: 2;
+}
+
+app-character-detail {
+  flex: 1;
+}

@@ -6,16 +6,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CharactersTableComponent } from './characters-table/characters-table.component';
+import { CharacterDetailComponent } from './character-detail/character-detail.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharactersTableComponent
+    CharactersTableComponent,
+    CharacterDetailComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,8 @@ import { CharactersTableComponent } from './characters-table/characters-table.co
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
