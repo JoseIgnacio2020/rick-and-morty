@@ -11,9 +11,7 @@ Node.js (versión recomendada: 16 o superior)
 Angular CLI (versión recomendada: 14.x)
 
 Puedes verificar si Node.js y Angular CLI están instalados ejecutando:
-
 `node -v  # Verifica la versión de Node.js`
-
 `ng version  # Verifica la versión de Angular CLI`
 
 # Instalación
@@ -21,30 +19,24 @@ Puedes verificar si Node.js y Angular CLI están instalados ejecutando:
 Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
 
 1. Clonar el repositorio:
-2. 
 `git clone https://github.com/JoseIgnacio2020/rick-and-morty.git`
-
 `cd rick-and-morty`
 
-4. Instalar las dependencias:
-   
-`cd rick-and-morty`
+2. Instalar las dependencias:
+`npm install`
 
 # Ejecutar el Proyecto
 
 Para iniciar el servidor de desarrollo y ver la aplicación en el navegador, usa el siguiente comando:
-
 `ng serve`
 Luego, abre tu navegador y accede a:
-
-`http://localhost:4200/`
+http://localhost:4200/
 
 # Despliegue en Netlify
 
 Puedes desplegar este proyecto en Netlify siguiendo estos pasos:
 
 1. Compilar el proyecto para producción:
-   
 `ng build --configuration=production`
 
 Esto generará una carpeta dist/rick-and-morty/ con los archivos estáticos necesarios.
