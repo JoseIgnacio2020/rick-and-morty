@@ -9,15 +9,26 @@ import { Character } from './models/character';
 })
 export class AppComponent {
   selectedCharacter: Character | null = null;
+  characters: Character[] = [];
 
   constructor(private favoritesService: FavoritesService) {
-    // Suscríbete a los cambios en el personaje seleccionado
-    this.favoritesService.selectedFavorite$.subscribe(character => {
-      this.selectedCharacter = character;
+    this.favoritesService.favorites$.subscribe((favorites: Character[]) => {
+      console.log('Favoritos actualizados:', favorites);
     });
   }
 
+  // Método para manejar el personaje seleccionado desde la tabla
   onCharacterSelected(character: Character) {
+    this.selectedCharacter = character;
+  }
+
+  // Método para manejar los personajes de la página actual
+  onCharactersUpdated(characters: Character[]) {
+    this.characters = characters;
+  }
+
+  // Método para manejar el personaje seleccionado desde favoritos
+  onFavoriteSelected(character: Character) {
     this.selectedCharacter = character;
   }
 }

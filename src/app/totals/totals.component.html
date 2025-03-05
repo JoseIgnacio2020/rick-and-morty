@@ -1,0 +1,27 @@
+<div class="totals-container">
+  <mat-card>
+    <mat-card-content>
+      <div class="totals-row">
+        <!-- Totales por especie -->
+        <div class="totals-section">
+          <h3>Totales por Especie</h3>
+          <mat-chip-list>
+            <mat-chip *ngFor="let species of getKeys(speciesTotals)">
+              {{ species }}: {{ speciesTotals[species] }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+
+        <!-- Totales por tipo -->
+        <div class="totals-section">
+          <h3>Totales por Tipo</h3>
+          <mat-chip-list>
+            <mat-chip *ngFor="let type of getKeys(typeTotals)">
+              {{ type }}: {{ typeTotals[type] }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

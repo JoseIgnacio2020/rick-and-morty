@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/cor
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { CharacterService } from '../services/characters.service';
-import { FavoritesService } from '../services/favorites.service'; // Importa el servicio
+import { FavoritesService } from '../services/favorites.service';
 import { Character } from '../models/character';
 
 @Component({
@@ -17,10 +17,11 @@ export class CharactersTableComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Output() characterSelected = new EventEmitter<Character>();
+  @Output() charactersUpdated = new EventEmitter<Character[]>();
 
   constructor(
     private characterService: CharacterService,
-    private favoritesService: FavoritesService // Inyecta el servicio
+    private favoritesService: FavoritesService
   ) {}
 
   ngOnInit() {
@@ -34,6 +35,7 @@ export class CharactersTableComponent implements OnInit {
       if (this.paginator) {
         this.paginator.length = response.info.count;
       }
+      this.charactersUpdated.emit(response.results);
     });
   }
 
@@ -53,8 +55,15 @@ export class CharactersTableComponent implements OnInit {
     this.characterSelected.emit(character);
   }
 
-  // Método para agregar un personaje a favoritos
   toggleFavorite(character: Character) {
-    this.favoritesService.addFavorite(character);
+    if (this.isFavorite(character)) {
+      this.favoritesService.removeFavorite(character);
+    } else {
+      this.favoritesService.addFavorite(character);
+    }
+  }
+
+  isFavorite(character: Character): boolean {
+    return this.favoritesService.getFavorites().some(fav => fav.id === character.id);
   }
 }

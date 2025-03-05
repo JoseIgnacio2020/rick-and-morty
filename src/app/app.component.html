@@ -1,7 +1,11 @@
 <div class="container">
-  <app-favorites></app-favorites>
+  <app-favorites (favoriteSelected)="onFavoriteSelected($event)"></app-favorites>
   <div class="content">
-    <app-characters-table (characterSelected)="onCharacterSelected($event)"></app-characters-table>
+    <app-characters-table 
+      (characterSelected)="onCharacterSelected($event)"
+      (charactersUpdated)="onCharactersUpdated($event)">
+    </app-characters-table>
     <app-character-detail [character]="selectedCharacter"></app-character-detail>
   </div>
+  <app-totals [characters]="characters"></app-totals>
 </div>

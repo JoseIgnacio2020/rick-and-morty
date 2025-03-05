@@ -1,0 +1,21 @@
+.totals-container {
+  padding: 20px;
+}
+
+.totals-row {
+  display: flex;
+  gap: 20px;
+}
+
+.totals-section {
+  flex: 1;
+}
+
+h3 {
+  color: #3f51b5;
+  margin-bottom: 10px;
+}
+
+mat-chip {
+  margin: 2px;
+}

@@ -1,11 +1,24 @@
 <div class="favorites-container">
-    <h2>Personajes Favoritos</h2>
-    <div *ngIf="favorites.length > 0; else noFavorites">
-      <div *ngFor="let favorite of favorites" class="favorite-item" (click)="onFavoriteClick(favorite)">
-        {{ favorite.name }}
-      </div>
-    </div>
-    <ng-template #noFavorites>
-      <p>No hay personajes favoritos.</p>
-    </ng-template>
-  </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Personajes Favoritos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Lista de favoritos -->
+      <mat-list *ngIf="favorites.length > 0; else noFavorites">
+        <mat-list-item *ngFor="let favorite of favorites" (click)="selectFavorite(favorite)">
+          <img mat-list-avatar [src]="favorite.image" [alt]="favorite.name">
+          <h3 mat-line>{{ favorite.name }}</h3>
+          <button mat-icon-button (click)="removeFavorite(favorite); $event.stopPropagation()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+
+      <!-- Mensaje si no hay favoritos -->
+      <ng-template #noFavorites>
+        <p class="no-favorites-message">No hay personajes favoritos.</p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

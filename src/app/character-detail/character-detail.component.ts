@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Character } from '../models/character';
 
 @Component({
   selector: 'app-character-detail',

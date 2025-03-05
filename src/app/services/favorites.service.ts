@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Character } from '../models/character';
 import { BehaviorSubject } from 'rxjs';
+import { Character } from '../models/character';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 export class FavoritesService {
   private favoritesSubject = new BehaviorSubject<Character[]>([]);
   favorites$ = this.favoritesSubject.asObservable();
-
-  private selectedFavoriteSubject = new BehaviorSubject<Character | null>(null);
-  selectedFavorite$ = this.selectedFavoriteSubject.asObservable();
 
   constructor() {}
 
@@ -28,8 +25,8 @@ export class FavoritesService {
     this.favoritesSubject.next(currentFavorites.filter(fav => fav.id !== character.id));
   }
 
-  // Selecciona un favorito
-  selectFavorite(character: Character) {
-    this.selectedFavoriteSubject.next(character);
+  // Obtiene la lista de favoritos
+  getFavorites(): Character[] {
+    return this.favoritesSubject.value;
   }
 }

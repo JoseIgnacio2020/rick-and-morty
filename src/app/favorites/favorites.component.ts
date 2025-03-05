@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FavoritesService } from '../services/favorites.service';
 import { Character } from '../models/character';
 
@@ -9,6 +9,7 @@ import { Character } from '../models/character';
 })
 export class FavoritesComponent {
   favorites: Character[] = [];
+  @Output() favoriteSelected = new EventEmitter<Character>(); // Emite el personaje seleccionado
 
   constructor(private favoritesService: FavoritesService) {
     // Suscríbete a los cambios en la lista de favoritos
@@ -17,8 +18,13 @@ export class FavoritesComponent {
     });
   }
 
-  // Método para manejar el clic en un favorito
-  onFavoriteClick(character: Character) {
-    this.favoritesService.selectFavorite(character); // Emite el personaje seleccionado
+  // Método para eliminar un favorito
+  removeFavorite(character: Character) {
+    this.favoritesService.removeFavorite(character);
+  }
+
+  // Método para seleccionar un favorito
+  selectFavorite(character: Character) {
+    this.favoriteSelected.emit(character); // Emite el personaje seleccionado
   }
 }
