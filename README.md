@@ -1,27 +1,62 @@
-# RickAndMorty
+# Proyecto Angular con Angular Material
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Este es un proyecto en Angular 14 que utiliza Angular Material para el diseño de componentes. Permite visualizar personajes con paginación, filtrado y la opción de marcarlos como favoritos.
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de ejecutar este proyecto, asegúrate de tener instaladas las siguientes herramientas:
 
-## Code scaffolding
+Node.js (versión recomendada: 16 o superior)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular CLI (versión recomendada: 14.x)
 
-## Build
+Puedes verificar si Node.js y Angular CLI están instalados ejecutando:
+`node -v  # Verifica la versión de Node.js`
+`ng version  # Verifica la versión de Angular CLI`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Instalación
 
-## Running unit tests
+Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clonar el repositorio:
+`git clone https://github.com/JoseIgnacio2020/rick-and-morty.git`
+`cd rick-and-morty`
 
-## Running end-to-end tests
+2. Instalar las dependencias:
+`cd rick-and-morty`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Ejecutar el Proyecto
 
-## Further help
+Para iniciar el servidor de desarrollo y ver la aplicación en el navegador, usa el siguiente comando:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng serve`
+Luego, abre tu navegador y accede a:
+`http://localhost:4200/`
+
+# Despliegue en Netlify
+
+Puedes desplegar este proyecto en Netlify siguiendo estos pasos:
+
+1. Compilar el proyecto para producción:
+`ng build --configuration=production`
+
+Esto generará una carpeta dist/rick-and-morty/ con los archivos estáticos necesarios.
+
+2. Crear una cuenta en Netlify y subir el proyecto:
+
+Inicia sesión en Netlify.
+
+Ve a "New site from Git" y conecta tu repositorio de GitHub.
+
+Selecciona la rama que deseas desplegar.
+
+Configura los ajustes de compilación:
+
+Build command: ng build --configuration=production
+
+Publish directory: dist/rick-and-morty
+
+Haz clic en "Deploy site".
+
+3. Netlify generará una URL para acceder a tu proyecto en línea.
+
